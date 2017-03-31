@@ -1,16 +1,16 @@
 package com.luke.aliyun.initConfInfo;
 
-import com.aliyun.utils.FileUtil;
-import com.aliyun.utils.HmacUtil;
-import com.aliyun.utils.RandomStr;
-import com.aliyun.utils.UTCTimeUtil;
+import com.luke.aliyun.utils.FileUtil;
+import com.luke.aliyun.utils.HmacUtil;
+import com.luke.aliyun.utils.RandomStr;
+import com.luke.aliyun.utils.UTCTimeUtil;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Arrays;
 
-import static com.aliyun.initConfInfo.AnalyzeConf.CONF_MAP;
-import static com.aliyun.utils.UTCTimeUtil.getNow;
+import static com.luke.aliyun.initConfInfo.AnalyzeConf.CONF_MAP;
+import static com.luke.aliyun.utils.UTCTimeUtil.getNow;
 
 /**
  * Created by Administrator on 2016/7/5.

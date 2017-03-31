@@ -7,11 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import static com.aliyun.settingJob.UpdateDomainRecordJob.count;
-import static com.aliyun.start.MyFrame.insertDocument;
-import static com.aliyun.start.MyFrame.textPane;
-import static com.aliyun.utils.PathUtil.CONF_FILE;
-import static com.aliyun.utils.PathUtil.LOG_FILE;
+import static com.luke.aliyun.settingJob.UpdateDomainRecordJob.count;
+import static com.luke.aliyun.start.MyFrame.insertDocument;
+import static com.luke.aliyun.start.MyFrame.textPane;
+import static com.luke.aliyun.utils.PathUtil.CONF_FILE;
+import static com.luke.aliyun.utils.PathUtil.LOG_FILE;
 
 /**
  * Created by yangf on 2016/7/7.

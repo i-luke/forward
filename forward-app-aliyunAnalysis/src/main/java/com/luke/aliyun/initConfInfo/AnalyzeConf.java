@@ -1,8 +1,8 @@
 package com.luke.aliyun.initConfInfo;
 
-import com.aliyun.model.Record;
-import com.aliyun.utils.FileUtil;
-import com.aliyun.utils.PathUtil;
+import com.luke.aliyun.model.Record;
+import com.luke.aliyun.utils.FileUtil;
+import com.luke.aliyun.utils.PathUtil;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
@@ -10,9 +10,9 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import static com.aliyun.settingJob.UpdateDomainRecordJob.WEB_IP;
-import static com.aliyun.utils.FileUtil.getAllProperties;
-import static com.aliyun.utils.UTCTimeUtil.getNow;
+import static com.luke.aliyun.settingJob.UpdateDomainRecordJob.WEB_IP;
+import static com.luke.aliyun.utils.FileUtil.getAllProperties;
+import static com.luke.aliyun.utils.UTCTimeUtil.getNow;
 
 /**
  * Created by Administrator on 2016/7/6.

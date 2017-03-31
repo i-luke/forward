@@ -1,19 +1,20 @@
 package com.luke.aliyun.settingJob;
 
-import com.aliyun.initConfInfo.AnalyzeConf;
-import com.aliyun.initConfInfo.SignatureUrl;
-import com.aliyun.model.Record;
-import com.aliyun.model.UpdateResult;
-import com.aliyun.utils.FileUtil;
-import com.aliyun.utils.GetPublicIP;
+import com.luke.aliyun.initConfInfo.AnalyzeConf;
+import com.luke.aliyun.initConfInfo.SignatureUrl;
+import com.luke.aliyun.model.Record;
+import com.luke.aliyun.model.UpdateResult;
+import com.luke.aliyun.utils.FileUtil;
+import com.luke.aliyun.utils.GetPublicIP;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.quartz.*;
 
 import java.awt.*;
 import java.io.IOException;
 import java.util.List;
 
-import static com.aliyun.initConfInfo.DescribeDomainRecords.getUrlResult;
-import static com.aliyun.utils.UTCTimeUtil.getNow;
+import static com.luke.aliyun.initConfInfo.DescribeDomainRecords.getUrlResult;
+import static com.luke.aliyun.utils.UTCTimeUtil.getNow;
 
 /**
  * Created by yangf on 2016/7/7.

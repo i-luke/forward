@@ -1,9 +1,9 @@
-package com.luke.json.toobject;
+package com.luke.json.model;
 
 /**
- * Created by yangf on 2017/3/30.
+ * Created by yangf on 2017/3/31.
  */
-public enum symbolType {
+public enum  SymbolType {
     LZK('['),
     RZK(']'),
     LDK('{'),
@@ -15,7 +15,7 @@ public enum symbolType {
 
     private char c;
 
-    private symbolType(char c){
+    SymbolType(char c){
         this.c = c;
     }
 

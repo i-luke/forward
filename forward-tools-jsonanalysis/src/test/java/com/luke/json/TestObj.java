@@ -1,6 +1,6 @@
 package com.luke.json;
 
-import com.luke.json.toobject.symbolType;
+import com.luke.json.toobject.WordAnaly;
 import org.junit.Test;
 
 /**
@@ -11,7 +11,6 @@ public class TestObj {
 
     @Test
     public void test(){
-        String aa = "'";
-        System.out.println(symbolType.DY.equal(aa.charAt(0)));
+        System.out.println(new WordAnaly("{\"qwe\":123.1, \"asd\":\"aaa\"}").getWord());
     }
 }

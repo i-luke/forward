@@ -4,8 +4,8 @@ import java.net.InetAddress;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.aliyun.initConfInfo.AnalyzeConf.URL_LIST;
-import static com.aliyun.initConfInfo.DescribeDomainRecords.getUrlResult;
+import static com.luke.aliyun.initConfInfo.AnalyzeConf.URL_LIST;
+import static com.luke.aliyun.initConfInfo.DescribeDomainRecords.getUrlResult;
 
 public class GetPublicIP {
 
@@ -33,7 +33,7 @@ public class GetPublicIP {
         // TODO Auto-generated method stub
         InetAddress ia = null;
         try {
-            ia = ia.getLocalHost();
+            ia = InetAddress.getLocalHost();
 
             String localname = ia.getHostName();
             String localip = ia.getHostAddress();

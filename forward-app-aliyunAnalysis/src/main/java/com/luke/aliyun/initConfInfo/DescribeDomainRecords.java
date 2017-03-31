@@ -1,8 +1,8 @@
 package com.luke.aliyun.initConfInfo;
 
-import com.aliyun.model.Record;
-import com.aliyun.utils.FileUtil;
-import com.aliyun.utils.PathUtil;
+import com.luke.aliyun.model.Record;
+import com.luke.aliyun.utils.FileUtil;
+import com.luke.aliyun.utils.PathUtil;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -21,8 +21,8 @@ import java.net.URL;
 import java.util.*;
 import java.util.List;
 
-import static com.aliyun.initConfInfo.AnalyzeConf.CONF_MAP;
-import static com.aliyun.utils.UTCTimeUtil.getNow;
+import static com.luke.aliyun.initConfInfo.AnalyzeConf.CONF_MAP;
+import static com.luke.aliyun.utils.UTCTimeUtil.getNow;
 
 /**
  * Created by Administrator on 2016/7/4.
@@ -33,7 +33,7 @@ public class DescribeDomainRecords {
         try {
             AnalyzeConf analyzeConf = new AnalyzeConf();
             //加载配置文件
-            analyzeConf.loadConf();
+            AnalyzeConf.loadConf();
             analyzeConf = null;
             List<String> recordList = new ArrayList<String>();
             Set<String> keySet = CONF_MAP.keySet();
@@ -58,10 +58,7 @@ public class DescribeDomainRecords {
                 FileUtil.writeSuccessToLog("Record" + i + "=" + recordList.get(i) + "\n");propMap.put("Record" + i, recordList.get(i));
             }
             propertiesUtil.WriteProperties(propMap, PathUtil.RESULT_RECORD_FILE);
-            if (recordList == null || recordList.isEmpty()) {
-                return false;
-            }
-            return true;
+            return !(recordList == null || recordList.isEmpty());
         } catch (IOException e) {
             FileUtil.writeErrToLog(e, getNow() + "[ load fail by" + PathUtil.CONF_FILE + " ]\n",
                 e.getMessage());

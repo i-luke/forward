@@ -1,8 +1,8 @@
 package com.luke.aliyun.start;
 
-import com.aliyun.initConfInfo.DescribeDomainRecords;
-import com.aliyun.settingJob.UpdateDomainRecordJob;
-import com.aliyun.utils.PathUtil;
+import com.luke.aliyun.initConfInfo.DescribeDomainRecords;
+import com.luke.aliyun.settingJob.UpdateDomainRecordJob;
+import com.luke.aliyun.utils.PathUtil;
 import org.quartz.SchedulerException;
 
 import javax.imageio.ImageIO;
@@ -17,13 +17,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-import static com.aliyun.initConfInfo.AnalyzeConf.CONF_MAP;
-import static com.aliyun.quartz.QuartzManager.addJob;
-import static com.aliyun.quartz.QuartzManager.removeJob;
-import static com.aliyun.settingJob.UpdateDomainRecordJob.jobKey;
-import static com.aliyun.settingJob.UpdateDomainRecordJob.triggerKey;
-import static com.aliyun.utils.FileUtil.writeErrToLog;
-import static com.aliyun.utils.UTCTimeUtil.getNow;
+import static com.luke.aliyun.initConfInfo.AnalyzeConf.CONF_MAP;
+import static com.luke.aliyun.quartz.QuartzManager.addJob;
+import static com.luke.aliyun.quartz.QuartzManager.removeJob;
+import static com.luke.aliyun.settingJob.UpdateDomainRecordJob.jobKey;
+import static com.luke.aliyun.settingJob.UpdateDomainRecordJob.triggerKey;
+import static com.luke.aliyun.utils.FileUtil.writeErrToLog;
+import static com.luke.aliyun.utils.UTCTimeUtil.getNow;
 
 /**
  * Created by yangf on 2016/7/7.
