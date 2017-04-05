@@ -29,4 +29,8 @@ public enum WordType {
         }
         return null;
     }
+
+    public boolean equals(String c){
+        return String.valueOf(this.c).equals(c);
+    }
 }

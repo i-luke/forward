@@ -1,6 +1,8 @@
 package com.luke.json;
 
 import com.luke.json.model.JsonObject;
+import com.luke.json.model.Node;
+import com.luke.json.toobject.GrammarAnaly;
 import com.luke.json.tostring.ToStringHandle;
 
 /**
@@ -14,6 +16,9 @@ public class JSON {
     }
 
     public static JsonObject parser(String str){
-        return null;
+        GrammarAnaly grammarAnaly = new GrammarAnaly(str);
+        Node node = grammarAnaly.getRoot();
+        JsonObject jsonObject = new JsonObject(node);
+        return jsonObject;
     }
 }

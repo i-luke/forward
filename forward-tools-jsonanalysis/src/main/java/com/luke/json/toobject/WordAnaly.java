@@ -27,7 +27,7 @@ public class WordAnaly {
             if (!isSymbol(c = getNext())) {
                 if ('"' == getNext(-1)) {
                     list.add(new Word(WordType.STR, strWord()));
-                } else if (':' == getNext(-1)) {
+                } else if (':' == getNext(-1) || ',' == getNext(-1) || '[' == getNext(-1)) {
                     String numStr = numberWord();
                     if (numStr.length() > 0) {
                         list.add(new Word(WordType.NUM, numStr));
