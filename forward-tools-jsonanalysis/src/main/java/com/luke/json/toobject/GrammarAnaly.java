@@ -27,7 +27,7 @@ public class GrammarAnaly {
     public Node getRoot() {
         root = new Node();
         List<Node> sub = new ArrayList<>();
-        root.setSub(sub);
+        root.setSubs(sub);
         if(WordType.LDK.equals(list.get(0).getType())){
             root.setType(NodeType.OBJECT);
             analyObj(root, sub);
@@ -41,7 +41,7 @@ public class GrammarAnaly {
     private void analyObj(Node prev, List<Node> sub) {
         Word word = null;
         Node node = new Node();
-        node.setSub(Collections.emptyList());
+        node.setSubs(Collections.emptyList());
         node.setPrev(prev);
         sub.add(node);
 
@@ -65,7 +65,7 @@ public class GrammarAnaly {
     private void analyArr(Node prev, List<Node> sub) {
         Node node = new Node();
         node.setPrev(prev);
-        node.setSub(Collections.emptyList());
+        node.setSubs(Collections.emptyList());
         node.setKey(String.valueOf(sub.size()));
         sub.add(node);
         setValue(node);
@@ -89,7 +89,7 @@ public class GrammarAnaly {
             index++;
             node.setType(NodeType.OBJECT);
             List subList = new ArrayList<>();
-            node.setSub(subList);
+            node.setSubs(subList);
             if(WordType.RDK.equals(getNext(1).getType())){
                 index++;
                 node.setEnd(true);
@@ -102,7 +102,7 @@ public class GrammarAnaly {
             index++;
             node.setType(NodeType.ARRAY);
             List subList = new ArrayList<>();
-            node.setSub(subList);
+            node.setSubs(subList);
             if(WordType.RZK.equals(getNext(1).getType())){
                 index++;
                 node.setEnd(true);
@@ -135,9 +135,9 @@ public class GrammarAnaly {
             } else if (WordType.DH.equals(nextWord.getType())) {
                 index++;
                 if(NodeType.ARRAY.equals(prevNode.getType())){
-                    analyArr(prevNode, prevNode.getSub());
+                    analyArr(prevNode, prevNode.getSubs());
                 }else{
-                    analyObj(prevNode, prevNode.getSub());
+                    analyObj(prevNode, prevNode.getSubs());
                 }
             } else {
                 getThrow(nextWord.getValue());

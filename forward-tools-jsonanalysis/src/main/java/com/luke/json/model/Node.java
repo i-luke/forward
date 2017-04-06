@@ -1,9 +1,6 @@
 package com.luke.json.model;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by YANGFENG457 on 2017-04-01.
@@ -12,7 +9,7 @@ public class Node {
 
     private Node prev;
 
-    private List<Node> sub;
+    private List<Node> subs;
 
     private boolean isEnd;
 
@@ -20,7 +17,7 @@ public class Node {
 
     private String strValue;
 
-    private Object objValue;
+    private String objValue;
 
     private NodeType type;
 
@@ -32,12 +29,12 @@ public class Node {
         this.prev = prev;
     }
 
-    public List<Node> getSub() {
-        return sub;
+    public List<Node> getSubs() {
+        return subs;
     }
 
-    public void setSub(List<Node> sub) {
-        this.sub = sub;
+    public void setSubs(List<Node> subs) {
+        this.subs = subs;
     }
 
     public boolean isEnd() {
@@ -77,11 +74,11 @@ public class Node {
         this.strValue = strValue;
     }
 
-    public Object getObjValue() {
+    public String getObjValue() {
         return objValue;
     }
 
-    public void setObjValue(Object objValue) {
+    public void setObjValue(String objValue) {
         this.objValue = objValue;
     }
 
@@ -99,7 +96,7 @@ public class Node {
         }else if (NodeType.ARRAY.equals(node.getType())){
             str.append("[");
         }
-        for(Node sub : node.getSub()){
+        for(Node sub : node.getSubs()){
             if(NodeType.OBJECT.equals(node.getType())){
                 str.append(sub.getKey()).append(":");
                 if(sub.getObjValue() != null){
@@ -115,6 +112,15 @@ public class Node {
         }else if (NodeType.ARRAY.equals(node.getType())){
             str.append("],");
         }
+    }
+
+    public Node getSub(String name){
+        for(Node sub : this.getSubs()){
+            if(name.equals(sub.getKey())){
+                return sub;
+            }
+        }
+        return null;
     }
 
     @Override

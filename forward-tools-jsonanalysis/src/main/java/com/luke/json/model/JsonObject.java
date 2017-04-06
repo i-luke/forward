@@ -19,8 +19,8 @@ public class JsonObject extends HashMap {
         this.node = node;
     }
 
-    public JsonObject get(String name){
-        for(Node sub : node.getSub()){
+    public JsonObject  get(String name){
+        for(Node sub : node.getSubs()){
             if(name.equals(sub.getKey())){
                 value = sub.getStrValue();
                 node = sub;

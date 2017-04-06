@@ -119,8 +119,8 @@ public class ToStringHandle {
         objToStr(obj, allField, result);
     }
 
-    private static void objToStr(Object obj, List list, StringBuilder result) {
-        for (Object object : list) {
+    private static void objToStr(Object obj, List allField, StringBuilder result) {
+        for (Object object : allField) {
             Object key = null;
             Object value = null;
 

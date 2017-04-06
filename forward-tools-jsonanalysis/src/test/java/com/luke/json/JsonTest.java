@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class JsonTest {
     @Test
-    public void testJSON(){
+    public void testJSON() throws Exception {
 
         A a = new A();
         a.setAge(23);
@@ -20,6 +20,7 @@ public class JsonTest {
         a.setClasses("B班");
         A.C c = new A.C();
         a.setC(c);
+        a.setNumber("23");
         c.setClientNo("1111111111");
 
 
@@ -34,14 +35,20 @@ public class JsonTest {
         list.add(a);
 
         map.put("list", list);
-        System.out.println(JSON.toJsonString(map));
+//        System.out.println(JSON.toJsonString(map));
+
+        String jsonStr = JSON.toJsonString(a);
+        System.out.println(jsonStr);
+        A a1 = JSON.parser(jsonStr, A.class);
+        System.out.println(a1);
+
     }
 }
 
 
 class A extends B{
     private String name;
-    private int age;
+    private Integer age;
     private C c;
 
     public String getName() {
@@ -52,11 +59,11 @@ class A extends B{
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -78,6 +85,16 @@ class A extends B{
         public void setClientNo(String clientNo) {
             this.clientNo = clientNo;
         }
+
+        @Override
+        public String toString() {
+            return "C{" + "clientNo='" + clientNo + '\'' + '}';
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "A{" + "name='" + name + '\'' + ", age=" + age + ", c=" + c + '}';
     }
 }
 
@@ -93,8 +110,16 @@ class B{
         this.classes = classes;
     }
 
+    public String getNumber() {
+        return number;
+    }
 
-    public String queryClasses() {
-        return classes;
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    @Override
+    public String toString() {
+        return "B{" + "classes='" + classes + '\'' + ", number='" + number + '\'' + '}';
     }
 }

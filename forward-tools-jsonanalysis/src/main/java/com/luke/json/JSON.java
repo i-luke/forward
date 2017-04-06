@@ -3,6 +3,7 @@ package com.luke.json;
 import com.luke.json.model.JsonObject;
 import com.luke.json.model.Node;
 import com.luke.json.toobject.GrammarAnaly;
+import com.luke.json.toobject.ParserObject;
 import com.luke.json.tostring.ToStringHandle;
 
 /**
@@ -20,5 +21,14 @@ public class JSON {
         Node node = grammarAnaly.getRoot();
         JsonObject jsonObject = new JsonObject(node);
         return jsonObject;
+    }
+
+    public static <T> T parser(String str, Class<T> clazz)
+        throws Exception {
+        GrammarAnaly grammarAnaly = new GrammarAnaly(str);
+        Node node = grammarAnaly.getRoot();
+        T t = clazz.newInstance();
+        ParserObject.parserObject(t, node);
+        return t;
     }
 }

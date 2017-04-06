@@ -42,7 +42,7 @@ public class TestObj {
         }else if (NodeType.ARRAY.equals(node.getType())){
             str.append("[");
         }
-        for(Node sub : node.getSub()){
+        for(Node sub : node.getSubs()){
             if(NodeType.OBJECT.equals(node.getType())){
                 str.append(sub.getKey()).append(":");
                 if(sub.getObjValue() != null){
@@ -63,7 +63,7 @@ public class TestObj {
 
     private void traverse(Node node){
         System.out.println(node);
-        for(Node sub : node.getSub()){
+        for(Node sub : node.getSubs()){
             traverse(sub);
         }
     }
